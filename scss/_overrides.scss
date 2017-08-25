@@ -1,0 +1,91 @@
+// Sticky footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// Navbar
+.nav-wrapper {
+  .brand-logo {
+    @media #{$small-and-down} {
+      font-size: 1.6rem;
+    }
+  }
+}
+#mobile-menu {
+  h5 {
+    color: $off-black;
+    margin-left: 16px;
+  }
+}
+
+// Parallax
+.parallax {
+  img {
+    @media #{$small-and-down} { max-width: 225%; }
+    @media #{$medium-and-up} { width: 100%; }
+  }
+}
+#need-to-try {
+  position: relative;
+  .tooltipped {
+    position: absolute;
+    right: 0;
+  }
+}
+
+// Adjust link positions to account for fixed header
+.header.offset:before {
+	display: block;
+ 	content: "";
+  height: 72px; /* Height of fixed navbar */
+  margin-top: -72px; /* Negative margin to offset height */
+  visibility: hidden;
+}
+
+// Cards
+.card {
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    height: 187px;
+    padding: 20px;
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+      height: 64px;
+      font-size: 22px;
+      overflow-y: scroll;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+  }
+  .card-reveal {
+    padding: 20px;
+    .card-title {
+      font-size: 22px;
+    }
+  }
+}
+
+// Modal
+.modal {
+  .modal-content {
+    padding-left: 0;
+    padding-right: 0;
+    .modal-close {
+      margin-left: 12px;
+    }
+  }
+  form {
+    .row:first-child {
+      margin-bottom: 0;
+    }
+  }
+}
