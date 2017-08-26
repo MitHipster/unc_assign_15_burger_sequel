@@ -8,11 +8,11 @@ const router = express.Router();
 
 // Router to get all burgers from the table
 router.get('/', (req, res) => {
-  // const order = 'date';
-  // burger.selectAll(order, (err, data) => {
-  //   if (err) throw err;
-  //   res.render('index', {burgers: data});
-  // });
+  db.Burger.findAll({
+    order: [ ['burger_name', 'ASC'] ]
+  }).then(burgers => {
+    res.render('index', {burgers: burgers});
+  });
 });
 
 // Route to add an uneaten burger to the list

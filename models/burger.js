@@ -1,7 +1,7 @@
 /*jslint esversion: 6, browser: true*/
 module.exports = (sequelize, DataTypes) => {
   // Set constructor equal to table definition
-  const Burger = sequelize.define('burger', {
+  const Burger = sequelize.define('Burger', {
     // Define fields, set properties and add validation
     burger_name: {
       type: DataTypes.STRING(50),
