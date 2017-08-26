@@ -8,6 +8,9 @@ const routes = require('./controllers/main_controller.js');
 // Set port environment variable port if deployed or 3000 if local
 const port = process.env.PORT || 3000;
 
+// Require model for syncing
+const db = require('./models');
+
 // Create an instance of the express app
 const app = express();
 
@@ -27,5 +30,9 @@ app.set('view engine', 'handlebars');
 // Open site at root
 app.use('/', routes);
 
-// Listen on specified port
-app.listen(port);
+// Sync sequelize model and start express app on specified port
+db.sequelize.sync().then( () => {
+  app.listen(port, () => {
+    console.log('App listening on port ' + port);
+  });
+});

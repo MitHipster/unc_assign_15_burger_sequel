@@ -1,29 +1,38 @@
 /*jslint esversion: 6, browser: true*/
-const orm = require('../config/orm.js');
-
-// Add calls to ORM functions and add module exports method
-const burger = {
-  selectAll: (order, call) => {
-    orm.selectAll('burgers', order, (err, data) => {
-      call(err, data);
-    });
-  },
-  insertOne: (insert, call) => {
-    orm.insertOne('burgers', insert, (err, data) => {
-      call(err, data);
-    });
-  },
-  updateOne: (update, cond, call) => {
-    orm.updateOne('burgers', update, cond, (err, data) => {
-      call(err, data);
-    });
-  },
-  deleteOne: (cond, call) => {
-    orm.deleteOne('burgers', cond, (err, data) => {
-      call(err, data);
-    });
-  }
+module.exports = (sequelize, DataTypes) => {
+  // Set constructor equal to table definition
+  const Burger = sequelize.define('burger', {
+    // Define fields, set properties and add validation
+    burger_name: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      validate: {
+        len: [1, 50]
+      }
+    },
+    rest_name: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      validate: {
+        len: [1, 50]
+      }
+    },
+    description: {
+      type: DataTypes.STRING(255),
+      validate: {
+        len: [0, 255]
+      }
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }
+  }, {
+    timestamps: true
+  });
+  return Burger;
 };
-
-// Export database functions for controller to use.
-module.exports = burger;
