@@ -89,3 +89,12 @@ main {
     }
   }
 }
+
+#rate.modal {
+  label {
+    color: color("shades", "black");
+  }
+  button {
+    margin-top: 24px;
+  }
+}

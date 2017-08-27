@@ -5199,4 +5199,9 @@ main {
 .modal form .row:first-child {
   margin-bottom: 0; }
 
+#rate.modal label {
+  color: #1c0104; }
+#rate.modal button {
+  margin-top: 24px; }
+
 /*# sourceMappingURL=materialize.css.map */

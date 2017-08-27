@@ -27,3 +27,35 @@
     </div>
   </div>
 </div>
+<div id="rate" class="modal">
+  <div class="modal-content container">
+    <h4>Give a Rating</h4>
+    <div class="row">
+      <form id="rating-form" action="" method="POST" class="col s12">
+        <p>
+          <input class="with-gap" name="RatingId" value="5" type="radio" id="stars5" checked/>
+          <label for="stars5">&#9733; &#9733; &#9733; &#9733; &#9733; | Just awesome!</label>
+        </p>
+        <p>
+          <input class="with-gap" name="RatingId" value="4" type="radio" id="stars4" />
+          <label for="stars4">&#9733; &#9733; &#9733; &#9733; &#9734; | Really good.</label>
+        </p>
+        <p>
+          <input class="with-gap" name="RatingId" value="3" type="radio" id="stars3" />
+          <label for="stars3">&#9733; &#9733; &#9733; &#9734; &#9734; | Okay in a pinch.</label>
+        </p>
+        <p>
+          <input class="with-gap" name="RatingId" value="2" type="radio" id="stars2" />
+          <label for="stars2">&#9733; &#9733; &#9734; &#9734; &#9734; | Not worth it.</label>
+        </p>
+        <p>
+          <input class="with-gap" name="RatingId" value="1" type="radio" id="stars1" />
+          <label for="stars1">&#9733; &#9734; &#9734; &#9734; &#9734; | Never again!</label>
+        </p>
+        <input type="hidden" name="devoured" value="true">
+        <button type="submit" class="waves-effect waves-light btn">Rate It</button>
+        <button type="reset" class="waves-effect waves-light btn modal-close">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
