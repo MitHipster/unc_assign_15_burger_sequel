@@ -5191,13 +5191,15 @@ main {
   .card .card-reveal .card-title {
     font-size: 22px; }
 
-.modal .modal-content {
-  padding-left: 0;
-  padding-right: 0; }
-  .modal .modal-content .modal-close {
-    margin-left: 12px; }
-.modal form .row:first-child {
-  margin-bottom: 0; }
+.modal {
+  overflow-x: hidden; }
+  .modal .modal-content {
+    padding-left: 0;
+    padding-right: 0; }
+    .modal .modal-content .modal-close {
+      margin-left: 12px; }
+  .modal form .row:first-child {
+    margin-bottom: 0; }
 
 #rate.modal label {
   color: #1c0104; }
