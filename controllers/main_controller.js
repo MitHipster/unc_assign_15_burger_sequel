@@ -10,42 +10,34 @@ const router = express.Router();
 router.get('/', (req, res) => {
   db.Burger.findAll({
     order: [ ['burger_name', 'ASC'] ]
-  }).then(burgers => {
-    res.render('index', {burgers: burgers});
+  }).then( results => {
+    res.render('index', {burgers: results});
   });
 });
 
 // Route to add an uneaten burger to the list
 router.post('/', (req, res) => {
-  // const insert = {
-  //   burger_name: req.body.burger_name,
-  //   rest_name: req.body.rest_name,
-  //   description: req.body.description
-  // };
-  // burger.insertOne(insert, (err, data) => {
-  //   if (err) throw err;
-  //   res.redirect('/');
-  // });
+  db.Burger.create(req.body).then( () => {
+    res.redirect('/');
+  });
 });
 
 // Route to update burger to 'devoured'
 router.put('/:id', (req, res) => {
-  // // Convert form value from string to boolean
-  // const update = {devoured: Boolean(req.body.devoured)};
-  // const cond = {id: req.params.id};
-  // burger.updateOne(update, cond, (err, data) => {
-  //   if (err) throw err;
-  //   res.redirect('/');
-  // });
+  db.Burger.update(req.body, {
+    where: {id: req.params.id}
+  }).then( () => {
+    res.redirect('/');
+  });
 });
 
 // Route to delete burger from the database
 router.delete('/:id', (req, res) => {
-  // const cond = {id: req.params.id};
-  // burger.deleteOne(cond, (err, data) => {
-  //   if (err) throw err;
-  //   res.redirect('/');
-  // });
+  db.Burger.destroy({
+    where: {id: req.params.id}
+  }).then( () => {
+    res.redirect('/');
+  });
 });
 
 // Export routes for server.js to use.

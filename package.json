@@ -2,7 +2,7 @@
   "name": "burger-sequel",
   "version": "1.0.0",
   "description": "UNC Boot Camp Assignment 15 Burger App Sequelize Version",
-  "main": "node server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -24,5 +24,8 @@
     "method-override": "^2.3.9",
     "mysql2": "^1.4.1",
     "sequelize": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
