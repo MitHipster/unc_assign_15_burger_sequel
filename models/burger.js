@@ -26,13 +26,19 @@ module.exports = (sequelize, DataTypes) => {
     devoured: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
-    },
-    rating: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0
     }
   }, {
     timestamps: true
   });
+  // Associate with another table (or model)
+  Burger.associate = models => {
+    // A burger can be created without a rating, but added ratings must exist in the ratings table
+    Burger.belongsTo(models.Rating, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
+
   return Burger;
 };
