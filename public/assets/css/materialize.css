@@ -4917,7 +4917,7 @@ input[type=range]:focus::-ms-fill-upper {
   .side-nav li > a {
     color: rgba(0, 0, 0, 0.87);
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     height: 48px;
     line-height: 48px;
@@ -4947,7 +4947,7 @@ input[type=range]:focus::-ms-fill-upper {
     cursor: initial;
     pointer-events: none;
     color: rgba(0, 0, 0, 0.54);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 48px; }
     .side-nav .subheader:hover {
@@ -4986,7 +4986,7 @@ input[type=range]:focus::-ms-fill-upper {
     .side-nav .user-view .email,
     .side-nav .userView .name,
     .side-nav .userView .email {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 24px; }
     .side-nav .user-view .name,
     .side-nav .userView .name {
@@ -5191,12 +5191,19 @@ main {
   .card .card-reveal .card-title {
     font-size: 22px; }
 
-.modal .modal-content {
-  padding-left: 0;
-  padding-right: 0; }
-  .modal .modal-content .modal-close {
-    margin-left: 12px; }
-.modal form .row:first-child {
-  margin-bottom: 0; }
+.modal {
+  overflow-x: hidden; }
+  .modal .modal-content {
+    padding-left: 0;
+    padding-right: 0; }
+    .modal .modal-content .modal-close {
+      margin-left: 12px; }
+  .modal form .row:first-child {
+    margin-bottom: 0; }
+
+#rate.modal label {
+  color: #1c0104; }
+#rate.modal button {
+  margin-top: 24px; }
 
 /*# sourceMappingURL=materialize.css.map */

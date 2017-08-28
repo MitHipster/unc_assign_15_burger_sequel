@@ -7,9 +7,8 @@
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">{{~this.burger_name~}}<i class="material-icons right">more_vert</i></span>
             <p>{{~this.rest_name~}}</p>
-            <form action="/{{this.id}}?_method=PUT" method="POST">
-              <input type="hidden" name="devoured" value="true">
-              <button type="submit" class="waves-effect waves-light btn">Devour It</button>
+            <form>
+              <a class="waves-effect waves-light btn modal-trigger devoured" href="#rate" data-id="{{this.id}}">Devour It</a>
             </form>
           </div>
           <div class="card-reveal">
