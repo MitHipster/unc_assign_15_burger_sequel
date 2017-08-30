@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         len: [1, 50]
       }
     },
-    description: {
+    burger_desc: {
       type: DataTypes.STRING(255),
       validate: {
         len: [0, 255]
@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
     // A burger can be created without a rating, but added ratings must exist in the ratings table
     Burger.belongsTo(models.Rating, {
       foreignKey: {
-        allowNull: true
+        allowNull: true,
+        defaultValue: 6 // Unrated Id
       }
     });
   };

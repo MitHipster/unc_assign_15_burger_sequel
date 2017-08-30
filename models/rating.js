@@ -7,15 +7,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        min: 1,
+        min: 0,
         max: 5
       }
     },
-    description: {
+    rating_desc: {
       type: DataTypes.STRING(50),
       allowNull: false,
       validate: {
         len: [1, 50]
+      }
+    },
+    rating_stars: {
+      type: DataTypes.STRING(55),
+      allowNull: false,
+      validate: {
+        len: [1, 55]
       }
     }
   }, {
@@ -24,7 +31,9 @@ module.exports = (sequelize, DataTypes) => {
   // Associate with another table (or model)
   Rating.associate = (models) => {
     // Ratings can be repeated on several burgers. No cascading delete option is necessary
-    Rating.hasMany(models.Burger, {});
+    Rating.hasMany(models.Burger, {
+      onDelete: "CASCADE"
+    });
   };
 
   return Rating;

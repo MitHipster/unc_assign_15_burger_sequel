@@ -48,6 +48,17 @@ main {
   visibility: hidden;
 }
 
+// Rating subheader
+h5 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  span.count {
+    font-size: 85%;
+    color: color("materialize-red", "darken-2");
+  }
+}
+
 // Cards
 .card {
   .card-content {

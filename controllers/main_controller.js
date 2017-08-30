@@ -6,12 +6,24 @@ const db = require('../models');
 // Create the `router` for the app and export the `router` at the end of your file.
 const router = express.Router();
 
-// Router to get all burgers from the table
+// Router to get all ratings and burgers from the tables
 router.get('/', (req, res) => {
-  db.Burger.findAll({
-    order: [ ['burger_name', 'ASC'] ]
+  db.Rating.findAll({
+    include: [db.Burger],
+    order: [
+      [ 'rating_value', 'DESC' ],
+      [ { model: db.Burger }, 'burger_name', 'ASC' ]
+    ]
   }).then( results => {
-    res.render('index', {burgers: results});
+    // Pass multiple datasets to creating the rated subsections. Unrated are burgers that have not been tried.
+    res.render('index', {
+      stars5: results[0],
+      stars4: results[1],
+      stars3: results[2],
+      stars2: results[3],
+      stars1: results[4],
+      unrated: results[5]
+    });
   });
 });
 

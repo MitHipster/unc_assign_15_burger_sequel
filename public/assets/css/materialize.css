@@ -5173,6 +5173,14 @@ main {
   /* Negative margin to offset height */
   visibility: hidden; }
 
+h5 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px; }
+  h5 span.count {
+    font-size: 85%;
+    color: #b9151b; }
+
 .card .card-content {
   display: flex;
   flex-direction: column;
