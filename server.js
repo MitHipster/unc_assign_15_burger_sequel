@@ -36,5 +36,5 @@ db.sequelize.sync().then( () => {
     console.log('App listening on port ' + port);
   });
 }).catch( err => {
-  console.log(error);
+  console.log(err);
 });
